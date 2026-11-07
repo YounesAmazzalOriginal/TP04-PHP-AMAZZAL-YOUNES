@@ -1,5 +1,4 @@
 <?php
-/*
     class Voiture {
         public string $couleur;
         public int $vitesse;
@@ -47,20 +46,24 @@
     echo "si on déclare la class Personne avec deux __construct il va généré un erreur de déclaration suivant<br><i>Fatal error: Cannot redeclare Personne::__construct() in C:/xampp/htdocs/tp_poo/partie1.php on line 16</i>";
     
     echo "<br><br><b>2.3 Le destructeur</b><br>";
-    */
 
-    class Voiture {
-        public function __construct(public string $couleur) {
-            echo "Voiture {$this->couleur} créée <br>";
-        }
-        public function __destruct() {
-            echo "Voiture {$this->couleur} détruite <br>";
-        }
-    }
     
-    $maVoiture = new Voiture("Blanche");
-    unset($maVoiture); // appelle __destruct()
-    echo "Fin du script <br>";
+    // $maVoiture = new Voiture("Blanche");
+    // unset($maVoiture); // appelle __destruct()
+    // echo "Fin du script <br>";
 
-    echo "<br><br><b>3.1</b><br>";
+
+    echo "<h2>2.3 Le destructeur</h2><br>";
+    
+    echo "<br><b>2.3.a :</b>";
+    echo "il va afficher : Voiture Blanche créée, apres Voiture Blanche détruite";
+    
+    echo "<br><br><b>2.3.b :</b>";
+    echo "si on supprime la ligne unset(\$maVoiture); il va afficher Voiture Blanche créée";
+
+    echo "<br><br><b>2.3.c :</b>";
+    echo "si on cree deux vbariable \$a et \$b, il va detruite la deuxieme, apres la premier";
+
+    echo "<br><br><b>2.3.d :</b>";
+    echo "si on ajoute __destruct contient __CLASS__, la premier destruction de l'objet, il va afficher le nom du class Personne";
 ?>
